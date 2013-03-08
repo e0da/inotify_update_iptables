@@ -16,7 +16,6 @@ class OnCreateHandler(pyinotify.ProcessEvent):
         try:
             print 'Exempting {0}'.format(event.name)
             subprocess.call([
-                'echo', # uncomment to debug
                 'iptables',
                 '-I INPUT 10 -s {0} -j ACCEPT'.format(event.name)
                 ])
