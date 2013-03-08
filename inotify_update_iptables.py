@@ -17,9 +17,9 @@ class OnCreateHandler(pyinotify.ProcessEvent):
             print 'Exempting {0}'.format(event.name)
             subprocess.call([
                 'iptables',
-                '-I INPUT 10',
-                '-s {0}'.format(event.name),
-                '-j ACCEPT',
+                '-I', 'INPUT', '10',
+                '-s', event.name,
+                '-j', 'ACCEPT',
                 ])
         except Exception as e:
             print e
