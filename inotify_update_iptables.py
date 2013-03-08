@@ -27,5 +27,5 @@ class OnCreateHandler(pyinotify.ProcessEvent):
 if __name__ == '__main__':
     wm = pyinotify.WatchManager()
     notifier = pyinotify.Notifier(wm, default_proc_fun=OnCreateHandler())
-    wm.add_watch('inotify_update_iptables', pyinotify.ALL_EVENTS)
+    wm.add_watch('ips', pyinotify.ALL_EVENTS)
     notifier.loop()
